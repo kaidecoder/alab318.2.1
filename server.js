@@ -26,11 +26,6 @@ app.use(express.static("styles"));
 //use routes
 app.use("/blogs", blogRoutes)
 
-app.post("/blogs", (req, res) => {
-    myBlogs.push({title: "Day 3", snippet: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum sapiente odio culpa necessitatibus aspernatur optio neque ducimus distinctio ea quis?"})
-    console.log({blogs: myBlogs})
-})
-
 //404 page - - middleware - use for every request if no other matches made - must go at the end of all the requests
 app.use((req, res) => {
   res.status(404).render("404", { title: "Page Not Found" });
